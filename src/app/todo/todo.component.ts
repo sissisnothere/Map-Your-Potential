@@ -27,9 +27,10 @@ export class TodoComponent {
 
 
    //create a function here:
-   onDelete() {
+   	onDelete() {
    		console.log('deleted');
-   }
+  	}
+
   	validateLoading: boolean = false;
   	submitLoading: boolean = false;
 
@@ -46,6 +47,14 @@ export class TodoComponent {
 	    console.log('click');
 	  }
 
+	 //sample data for todolist
+	firstTodoItem = {
+		id: 1,
+		name: "Homework",
+		important: "high",
+		isHightlight: false,
+		duedate: "07152017"
+    };
 
 }
 

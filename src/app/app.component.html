@@ -39,7 +39,10 @@
   <div class="content-container">
     <div class="content-area">
       <router-outlet></router-outlet>
-      <todo-list></todo-list>
+      <!-- [todoItem] is the binding target, because it is left of equal sign
+          firstTodoItem is the binding source to the right must have '' 
+       -->
+      <todo-list [todoItem]="'firstTodoItem'"></todo-list>
       <!-- the todo-list component is rendering, can list multiple -->
     </div>
   </div>

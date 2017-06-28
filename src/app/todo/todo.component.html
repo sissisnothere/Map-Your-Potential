@@ -3,7 +3,7 @@
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
-  
+
 <p>Example Todo list to start a new component</p>
  <div id="container" class="container">
  </div>
@@ -12,6 +12,8 @@
   <span class="name">[[Name]]</span>  <!-- if [[Todo ID]] is not completed show [[name]] -->
 
 <h2> {{10+5}}</h2>
+<h2> {{ firstTodoItem.name }}</h2>
+<div> deadline: {{ firstTodoItem.duedate}} </div>
 
 
 <!-- angular has pattern for native DOM elements where it is looking for the event name without the on , so make a function for onDelete()-->
