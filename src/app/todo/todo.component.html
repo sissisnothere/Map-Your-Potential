@@ -13,7 +13,8 @@
 
 <h2> {{10+5}}</h2>
 <h2> {{ firstTodoItem.name }}</h2>
-<div> deadline: {{ firstTodoItem.duedate}} </div>
+<!-- if the element is null, the entire statement is gone -->
+<div *ngIf="firstTodoItem.duedate"> deadline: {{ firstTodoItem.duedate}} </div>
 
 
 <!-- angular has pattern for native DOM elements where it is looking for the event name without the on , so make a function for onDelete()-->
