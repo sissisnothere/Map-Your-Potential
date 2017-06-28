@@ -4,4 +4,17 @@
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
 <p>Example Todo list to start a new component</p>
+ <div id="container" class="container">
+ </div>
+<div todo='[[Todo ID]]' class="list-group-item}">
+  <i class="[[ add 'hidden' class if todo is NOT complete]]"></i>
+  <span class="name">[[Name]]</span>  <!-- if [[Todo ID]] is not completed show [[name]] -->
 
+<h2> {{10+5}}</h2>
+
+
+<!-- angular has pattern for native DOM elements where it is looking for the event name without the on , so make a function for onDelete()-->
+<a class="delete" (click)="onDelete()">
+	remove
+</a>
+</div>
