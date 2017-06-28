@@ -1,6 +1,13 @@
 <!-- display all contents (header/main/footer)  -->
 
 <clr-main-container>
+<clr-alert [clrAlertType]="'alert-success'" (clrAlertClosedChange)="onClose()">
+                        <div class="alert-item">
+                          <span class="alert-text">
+                              This alert indicates a success!
+                          </span>
+                        </div>
+                    </clr-alert>
   <clr-header>
     <div class="branding">
       <a href="#" class="nav-link">
@@ -37,3 +44,5 @@
     </div>
   </div>
 </clr-main-container>
+
+

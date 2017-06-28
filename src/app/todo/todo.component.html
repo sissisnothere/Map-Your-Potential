@@ -3,6 +3,7 @@
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
+  
 <p>Example Todo list to start a new component</p>
  <div id="container" class="container">
  </div>
@@ -17,4 +18,11 @@
 <a class="delete" (click)="onDelete()">
 	remove
 </a>
+
+<button class="btn btn-primary">OpenWaze</button>
+<button [clrLoading]="'submitLoading'" type="submit" class="btn btn-success-outline" (click)="submitDemo()">Submit</button>
+<button [clrLoading]="validateLoading" class="btn btn-info-outline" (click)="validateDemo()">Validate</button>
+
+
+
 </div>

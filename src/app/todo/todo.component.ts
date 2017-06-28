@@ -3,8 +3,8 @@
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
-import { Component, Input } from '@angular/core';
-import {WizardDeprecated} from "clarity-angular";
+import { Component, Input, ViewChild } from '@angular/core';
+import {Wizard} from "clarity-angular";
 //import {MyValidationService} from "service/my-validation";
 
 @Component({
@@ -30,5 +30,23 @@ export class TodoComponent {
    onDelete() {
    		console.log('deleted');
    }
+  	validateLoading: boolean = false;
+  	submitLoading: boolean = false;
+
+	  validateDemo() {
+	    this.validateLoading = true;
+	    //Validating Logic
+	    this.validateLoading = false;
+	  }
+
+	  submitDemo() {
+	    this.submitLoading = true;
+	    //Submit Logic
+	    this.submitLoading = false;
+	    console.log('click');
+	  }
+
+
 }
+
 
