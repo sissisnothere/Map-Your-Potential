@@ -12,17 +12,22 @@
     <div class="branding">
       <a href="#" class="nav-link">
         <span class="clr-icon clr-clarity-logo"></span>
-        <span class="title">Clarity</span>
+        <span class="title"> {{title}} </span> 
+        <!-- must has space between <> -->      
       </a>
     </div>
+    <!--
     <form class="search">
       <label for="search_input">
         <input id="search_input" type="text" placeholder="Search for Components...">
       </label>
     </form>
+
     <div class="header-actions">
     </div>
+     -->
   </clr-header>
+  <!--
   <nav class="sub-nav" [clr-nav-level]="1">
     <ul class="nav">
       <li class="nav-item">
@@ -36,15 +41,25 @@
       </li>
     </ul>
   </nav>
+  -->
   <div class="content-container">
     <div class="content-area">
+
       <router-outlet></router-outlet>
       <!-- [todoItem] is the binding target, because it is left of equal sign
-          firstTodoItem is the binding source to the right must have '' 
+          firstTodoItem is the binding source to the right must have ''
+          add a delete event binding to the todoItem element, make a key term $event, to get access to the value 
+          so it tells angular when the todo item component emits its delete event, we want to respond to that by calling the app component onTOdoItemDelete()
+          <todo-list [todoItem]="'firstTodoItem'"
+      (delete)="onTodoItemDelete($event)"></todo-list>
        -->
-      <todo-list [todoItem]="'firstTodoItem'"></todo-list>
+      
       <!-- the todo-list component is rendering, can list multiple -->
-    </div>
+
+
+
+      
+  </div>
   </div>
 </clr-main-container>
 

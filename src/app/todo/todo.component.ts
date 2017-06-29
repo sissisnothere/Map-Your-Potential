@@ -3,7 +3,7 @@
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import {Wizard} from "clarity-angular";
 //import {MyValidationService} from "service/my-validation";
 
@@ -24,11 +24,12 @@ export class TodoComponent {
    //tell Angular that we want it to support any property bindings place on instances of the todoItem elements, 
    //where the property name is todoItem
    @Input() todoItem;
-
+   @Output() deleteItem = new EventEmitter();
 
    //create a function here:
    	onDelete() {
    		console.log('deleted');
+   		this.deleteItem.emit(this.todoItem);
   	}
 
   	validateLoading: boolean = false;
@@ -53,8 +54,30 @@ export class TodoComponent {
 		name: "Homework",
 		important: "high",
 		isHightlight: false,
-		duedate: "07152017"
+		duedate: null
     };
+    
+    TodoItems = [{
+        id: 1,
+        name: "others",
+        important: "high",
+        isHightlight: false,
+        duedate: null
+      },
+      {
+        id: 2,
+        name: "Homework",
+        important: "high",
+        isHightlight: false,
+        duedate: null
+      },
+      {
+        id: 3,
+        name: "housework",
+        important: "high",
+        isHightlight: false,
+        duedate: null
+      }];
 
 }
 
