@@ -25,12 +25,14 @@
 
 </clr-dropdown>
 -->
-<div>
-  <label>Recommanded Position:</label>  
-        <!-- this is two way binding [(ngModel)] data flows both directions -->
-        <input [(ngModel)]="position.name" placeholder="name">
-        
-        <li *ngFor="let position of positions">
-          <span class="id"> {{position.id}}</span> {{position.name}}
-        </li>
-</div>
+
+<h1>{{title}}</h1>
+    <h2>My Position</h2>
+    <ul class="positions">
+      <li *ngFor="let position of positions"
+        [class.selected]="position === selectedPosition"
+        (click)="onSelect(position)">
+        <span class="badge">{{position.id}}</span> {{position.name}}
+      </li>
+    </ul>
+<position-detail [position] = "selectedPosition"> </position-detail>
