@@ -4,10 +4,11 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
-import { TodoComponent } from "./todo/todo.component";
+import { PositionDetailComponent } from "./position-detail/position-detail.component";
 import { ClarityModule } from "clarity-angular";
 import { ROUTING } from "./app.routing";
 import { APP_BASE_HREF } from "@angular/common";
+
 
 describe('AppComponent', () => {
 
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
                 AppComponent,
                 AboutComponent,
                 HomeComponent,
-                TodoComponent
+                PositionDetailComponent
             ],
             imports: [
                 ClarityModule.forRoot(),

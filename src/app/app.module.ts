@@ -11,7 +11,7 @@ import { AppComponent } from './app.component'; //single '' for local module
 import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
-import { TodoComponent } from "./todo/todo.component";
+import { PositionDetailComponent } from "./position-detail/position-detail.component";
 //import { MyValidationService } from "service/my-validation";
 
 // meta data here
@@ -21,7 +21,7 @@ import { TodoComponent } from "./todo/todo.component";
         AppComponent,   //componet want to avaliable here.
         AboutComponent,
         HomeComponent,
-        TodoComponent
+        PositionDetailComponent
     ],
     // used to bring other module my module needs
     imports: [  //
