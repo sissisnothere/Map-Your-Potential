@@ -3,7 +3,9 @@
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { PositionService } from '../position.service'
+//import this here, otherwise will cause " Two different types with this name exist, but they are unrelated."  error
 import { Position } from "../position-detail/position";
 
 
@@ -11,35 +13,40 @@ import { Position } from "../position-detail/position";
     selector: 'home',
     styleUrls: ['./home.component.scss'],
     templateUrl: './home.component.html',
+    providers: [PositionService]
 })
 
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-    
-    positions = POSITIONS;
 
+//use the mock data from PositionService
+    positions: Position[];
     selectedPosition: Position;
-    onSelect(position: Position): void {
-    	this.selectedPosition = position;
+   
+
+/**** DO NOT use NEW with the PositionService *****/
+
+  // will case the error fo No provider for PositionService!
+  //need to add providers to the @Component
+    constructor(private positionService : PositionService) {
+      //constructor should ne contain complex logic, expecially a constructor that  calls a server.
+    }
+    
+
+    //need to change act on the Promise when it resolves:
+    getPositions(): void {
+      //this should return an array of positions, but if it complains: " Two different types with this name exist, but they are unrelated." 
+      //maybe bcause we import the position in two files, or missing import files from other location
+       this.positionService.getPositions().then(positions => this.positions=positions);
+    } 
+
+         //ngOnInt method will call it at the right time  
+    ngOnInit(): void {
+      this.getPositions();
     }
 
-  
-    position : Position = {
-    	id: 0,
-    	name: 'none'
-    };
-    
-   
+
+    onSelect(position: Position): void { this.selectedPosition = position; }
 }
 
-
-//a class member cannot have the 'const' keyword inside the class
-const POSITIONS : Position[] = [
-      { id: 11, name: "Software Developer"},
-      { id: 12, name: "System Engineer"},
-      { id: 13, name: "Validation Engineer"},
-      { id: 14, name: "Network Developer"},
-      { id: 15, name: "Security Engineer"},
-      { id: 16, name: "Database Administration"}
-]; 
