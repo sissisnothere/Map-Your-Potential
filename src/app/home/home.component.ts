@@ -4,7 +4,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 import { Component, OnInit } from "@angular/core";
-import { PositionService } from '../position.service'
+import { PositionService } from '../position.service';
 //import this here, otherwise will cause " Two different types with this name exist, but they are unrelated."  error
 import { Position } from "../position-detail/position";
 
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
        this.positionService.getPositions().then(positions => this.positions=positions);
     } 
 
-         //ngOnInt method will call it at the right time  
+    //ngOnInt method will call it at the right time  
     ngOnInit(): void {
       this.getPositions();
     }

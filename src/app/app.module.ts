@@ -12,6 +12,7 @@ import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { PositionDetailComponent } from "./position-detail/position-detail.component";
+import { SelectionComponent } from "./selection/selection.component";
 //import { MyValidationService } from "service/my-validation";
 
 // meta data here
@@ -21,7 +22,8 @@ import { PositionDetailComponent } from "./position-detail/position-detail.compo
         AppComponent,   //componet want to avaliable here.
         AboutComponent,
         HomeComponent,
-        PositionDetailComponent
+        PositionDetailComponent,
+        SelectionComponent
     ],
     // used to bring other module my module needs
     imports: [  //

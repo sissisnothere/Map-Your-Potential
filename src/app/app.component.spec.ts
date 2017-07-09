@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { PositionDetailComponent } from "./position-detail/position-detail.component";
+import { SelectionComponent } from "./selection/selection.component";
 import { ClarityModule } from "clarity-angular";
 import { ROUTING } from "./app.routing";
 import { APP_BASE_HREF } from "@angular/common";
@@ -21,7 +22,8 @@ describe('AppComponent', () => {
                 AppComponent,
                 AboutComponent,
                 HomeComponent,
-                PositionDetailComponent
+                PositionDetailComponent，
+                SelectionComponent
             ],
             imports: [
                 ClarityModule.forRoot(),

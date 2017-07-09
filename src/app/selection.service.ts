@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+
+import { Question } from "./selection/selection";
+import { QUESTIONS } from  "./mock-questions";
+
+//tells TypeScript to emit metadata about the service.
+@Injectable()
+
+
+/**** DO NOT use NEW with the PositionService *****/
+//the Promise make sure call back when the results are ready. for asynchronous service to do somework and give it a callback function.
+export class QuestionService {
+
+	// getQuestions() {
+	// 	return QUESTIONS;
+	// }
+
+	//getQuestions(): Promise<Question[]> { return Promise.resolve(QUESTIONS); } //get function
+	getQuestions(){ 
+		return QUESTIONS;
+	}
+}
