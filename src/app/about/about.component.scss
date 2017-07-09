@@ -1,3 +1,32 @@
 // Copyright (c) 2016 VMware, Inc. All Rights Reserved.
 // This software is released under MIT license.
 // The full license information can be found in LICENSE in the root directory of this project.
+
+.center-cntainer {
+    margin: 10px auto 10px auto; //margin auto is middle?
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
+
+.center-cntainer .title {
+
+}
+
+.center-cntainer .description {
+    font-size: 16px;
+    line-height: 20px !important;
+
+}
+
+.center-cntainer .assessment-btn {
+    margin-top: 30px;
+    height: 4em;
+}
+
+@media screen and (min-width: 480px) {
+    .center-cntainer .assessment-btn {
+	    font-size: 16px;
+	    width: 30em;  
+	}
+}

@@ -1,13 +1,17 @@
 <!-- display all contents (header/main/footer)  -->
 
 <clr-main-container>
-<clr-alert [clrAlertType]="'alert-success'" (clrAlertClosedChange)="onClose()">
-                        <div class="alert-item">
-                          <span class="alert-text">
-                              This alert indicates a success!
-                          </span>
-                        </div>
-                    </clr-alert>
+<!-- conflict with the module window in about page -->
+<!--
+<clr-alert [clrAlertType]="'alert-success'" (clrAlertClosedChange)="onClose()"> 
+
+  <div class="alert-item">
+    <span class="alert-text">
+        This alert indicates a success!
+    </span>
+  </div>
+</clr-alert>
+-->
   <clr-header>
     <div class="branding">
       <a href="#" class="nav-link">
@@ -27,7 +31,7 @@
     </div>
      -->
   </clr-header>
-  <!--
+
   <nav class="sub-nav" [clr-nav-level]="1">
     <ul class="nav">
       <li class="nav-item">
@@ -36,17 +40,12 @@
       <li class="nav-item">
         <a class="nav-link" href="#" [routerLink]="['/about']" routerLinkActive="active">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/todo']" routerLinkActive="active">Todo</a>
-      </li>
     </ul>
   </nav>
-  -->
   <div class="content-container">
     <div class="content-area">
 
       <router-outlet></router-outlet>
-
 
 
 

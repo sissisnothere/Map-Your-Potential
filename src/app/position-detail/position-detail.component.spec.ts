@@ -5,7 +5,7 @@
  */
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import { ClarityModule } from 'clarity-angular';
-import { HomeComponent } from './position-detail.component';
+import { PositionDetailComponent } from './position-detail.component';
 
 
 describe('PositionDetailComponent', () => {
