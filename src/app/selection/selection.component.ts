@@ -25,6 +25,7 @@ export class SelectionComponent implements OnInit {
 
 	questions : Question[];	//array
 	selectedQuestion: Question;	//single
+	//passAnswer: Question.answer;
 
 	/*
 	Mostly we use ngOnInit for all the initialization/declaration and avoid stuff to work in the constructor. The constructor should only be used to initialize class members but shouldn't do actual "work".
@@ -40,7 +41,7 @@ export class SelectionComponent implements OnInit {
 
       // this.questionService.getQuestions().then(questions => this.questions=questions);
 
-      /*** this display the questions by the id ***/
+      /*** this is the first question: id is 12 ***/
        this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
         console.log(this.selectedQuestion);  
 
@@ -61,8 +62,45 @@ export class SelectionComponent implements OnInit {
 
     open: Boolean = false;
 
-    onNext(): void {
-    	this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 11);
+    onNext(id: any, answer : string): void {
+
+    	//write logics here:
+    	if(id == 11 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
+    	}
+    	else if(id == 11 && answer === "B") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);
+    	}
+    	else if(id == 12 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 11);
+    	}
+    	else if(id == 12 && answer === "B") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);
+    	}
+    	else if(id == 13 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 15);
+    	}
+    	else if(id == 13 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 14); 
+    	}
+    	else if(id == 14 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);  
+    	}
+    	else if(id == 14 && answer === "B") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 16);
+    	}
+    	else if(id == 15 && answer === "A") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 16);
+    	}
+    	else if(id == 15 && answer === "B") {
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);  
+    	}
+    	else if(id == 16) {
+    		//this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 1);
+
+    	}
+
+    	//this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 11);
         console.log(this.selectedQuestion);  
     }
 }

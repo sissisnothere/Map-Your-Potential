@@ -10,21 +10,27 @@
     -->
     <!-- find a way to DISPLAY name in modal-title, and answers in modal-body -->
     <
-    <h3 class="modal-title">{{selectedQuestion.question}}</h3>
+    <h3 class="modal-title">{{selectedQuestion.id}}.{{selectedQuestion.question}}</h3>
   
     <div class="modal-body">
    		<div class="radio">
-	    <input type="radio" name="gridRadios" id="checkrads_9">
-	    <label for="checkrads_9"> {{selectedQuestion.answer[0].A}} </label>
-	</div>
-	<div class="radio">
-	    <input type="radio" name="gridRadios" id="checkrads_10">
-	    <label for="checkrads_10"> {{selectedQuestion.answer[1].B}}  </label>
-	</div>
+		    <input type="radio" [(ngModel)]="selectedQuestion.answer" name="answer" id="A" value="A">
+		    <label for="A"> Yes </label>
+		</div>
+		<div class="radio">
+		    <input type="radio" [(ngModel)]="selectedQuestion.answer" name="answer" id="B" value="B">
+		    <label for="B"> No </label>
+		</div>
     </div>
-    
+     
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="onNext()">Next</button>
+    <div>Selected Radio: {{selectedQuestion.answer}}</div>
+    <div *ngIf="selectedQuestion.id != '16'">
+      	<button type="button" class="btn btn-primary" (click)="onNext(selectedQuestion.id, selectedQuestion.answer)">Next</button>
+    </div>
+    <div *ngIf="selectedQuestion.id == '16'">
+      	<button type="button" class="btn btn-primary" (click)="onNext(selectedQuestion.id, selectedQuestion.answer)">Submit</button>
+    </div>
     </div>
    
   </clr-modal>

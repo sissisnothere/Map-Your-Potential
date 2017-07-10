@@ -5,7 +5,7 @@ import { Question } from "./selection/selection";
 //need to have "export" in order to read by other files
 export const QUESTIONS : Question[] = [
 
-	{ id: 11, question: "Do you like to be a Software Developer?", answer : [{ A: "Yes" }, { B: "No" }] },
+	  { id: 11, question: "Do you like to be a Software Developer?", answer : [{ A: "Yes" }, { B: "No" }] },
     { id: 12, question: "Do you like to be a System Engineer?", answer : [{ A: "Yes" }, { B: "No" }] },
     { id: 13, question: "Do you like to be a Validation Engineer?", answer : [{ A: "Yes" }, { B: "No" }] },
     { id: 14, question: "Do you like to be a Network Developer?", answer : [{ A: "Yes" }, { B: "No" }] },
