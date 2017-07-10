@@ -1,7 +1,32 @@
-    <h2>My Assessment!!!!</h2>
-<div class="modal-title" >
-	this is title
-</div>
-<div class="modal-body"> 
-	this should be questions 
-</div>
+  <button class="btn btn-primary assessment-btn col-lg-12 col-md-12 col-ms-12" (click)="onOpen(true)">Want to Have a Try?</button>
+
+<clr-modal [(clrModalOpen)]="open" [clrModalSize]="'xl'" [clrModalStaticBackdrop]="true">
+    <!-- !!!does not show  the progress bar -->
+    <!--
+    <div class="progress top flash progress-fade labeled">
+        <progress max="100" value="10" data-displayval="10%"></progress>
+    </div>
+    <selection></selection> 
+    -->
+    <!-- find a way to DISPLAY name in modal-title, and answers in modal-body -->
+    <
+    <h3 class="modal-title">{{selectedQuestion.question}}</h3>
+  
+    <div class="modal-body">
+   		<div class="radio">
+	    <input type="radio" name="gridRadios" id="checkrads_9">
+	    <label for="checkrads_9"> {{selectedQuestion.answer[0].A}} </label>
+	</div>
+	<div class="radio">
+	    <input type="radio" name="gridRadios" id="checkrads_10">
+	    <label for="checkrads_10"> {{selectedQuestion.answer[1].B}}  </label>
+	</div>
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="onNext()">Next</button>
+    </div>
+   
+  </clr-modal>
+
+
