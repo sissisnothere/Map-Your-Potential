@@ -10,7 +10,7 @@ import { AboutComponent } from './about.component';
 
 describe('AboutComponent', () => {
 
-    let expectedMsg: string = 'This is a page to help demonstrate routing.';
+    let expectedMsg: string = 'This is a Clarity seed application. This is the default page that loads for the application.';
 
     let fixture: ComponentFixture<any>;
     let compiled: any;
@@ -35,7 +35,7 @@ describe('AboutComponent', () => {
         fixture.destroy();
     });
 
-    it('should create the about page', async(() => {
+    it('should create the home page', async(() => {
         expect(compiled).toBeTruthy();
     }));
 

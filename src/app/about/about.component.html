@@ -3,14 +3,32 @@
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
-
-<div class="center-cntainer col-lg-12 col-md-12 col-ms-12">
-
-  <div class="title"><h1> Mark Your Protention </h1> </div>
-
-    <h2 class="description"> Aenean lobortis fuga sint dolor etiam nunc porta nullam pretium, tincidunt lectus, minus, exercitation, totam nihil blandit minima vulputate incididunt, ducimus molestiae curabitur recusandae magnis nesciunt sagittis repellendus elit fames hymenaeos montes nesciunt, leo ante, eaque maecenas do porttitor ridiculus rerum vehicula lorem magni nunc, fusce fames laboris! Eleifend nascetur veniam accumsan excepteur integer venenatis explicabo, lobortis. Sapien fuga mi! Inventore risus, dis incididunt taciti unde quia quam nostra pulvinar eligendi porttitor, tincidunt asperiores convallis, occaecati lacinia cupidatat suscipit aliqua? Atque fermentum vel varius. Recusandae, pellentesque minus blandit rhoncus faucibus. Tempus consequat, laboris eaque, nascetur, lorem, quod commodo aspernatur placeat. </h2> 
-
-  <selection></selection>
+  
+<h2>All Position</h2>
+<div class="row">
+      <div *ngFor="let position of positions" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <a href="position-detail" class="card clickable">
+              <div class="card-img">
+                  <img src="../images/imagePlaceHolder.gif">
+              </div>
+              <div class="card-block">
+                  <p class="card-text">
+                      {{position.name}}
+                  </p>
+              </div>
+          </a>
+      </div>
+    
 </div>
 
+<!--
+<ul class="positions">
+  <li *ngFor="let position of positions"
+    [class.selected]="position === selectedPosition"
+    (click)="onSelect(position)">
+    <span class="badge">{{position.id}}</span> {{position.name}}
+  </li>
+</ul>
   
+<position-detail [position] = "selectedPosition"> </position-detail> 
+-->

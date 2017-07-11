@@ -4,37 +4,11 @@
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
 
+<div class="center-cntainer col-lg-12 col-md-12 col-ms-12">
 
- <!--
-<clr-dropdown [clrMenuPosition]="'bottom-right'">
-    <button class="btn btn-outline-primary" clrDropdownToggle>
-        Dropdown
-        <clr-icon shape="caret down"></clr-icon>
-    </button>
-   
-    <div class="dropdown-menu">
-        <label class="dropdown-header">Dropdown header</label>
-        <a href="javascript://" clrDropdownItem>Action 1</a>
-        <a href="javascript://" clrDropdownItem>Action 2</a>
-        <a href="javascript://" class="disabled" clrDropdownItem>Disabled</a>
-        <div class="dropdown-divider"></div>
-        <a href="javascript://" clrDropdownItem>Link 1</a>
-        <a href="javascript://" clrDropdownItem>Link 2</a>
-    </div>
+  <div class="title"><h1> Map Your Protention </h1> </div>
 
+    <h2 class="description"> Aenean lobortis fuga sint dolor etiam nunc porta nullam pretium, tincidunt lectus, minus, exercitation, totam nihil blandit minima vulputate incididunt, ducimus molestiae curabitur recusandae magnis nesciunt sagittis repellendus elit fames hymenaeos montes nesciunt, leo ante, eaque maecenas do porttitor ridiculus rerum vehicula lorem magni nunc, fusce fames laboris! Eleifend nascetur veniam accumsan excepteur integer venenatis explicabo, lobortis. Sapien fuga mi! Inventore risus, dis incididunt taciti unde quia quam nostra pulvinar eligendi porttitor, tincidunt asperiores convallis, occaecati lacinia cupidatat suscipit aliqua? Atque fermentum vel varius. Recusandae, pellentesque minus blandit rhoncus faucibus. Tempus consequat, laboris eaque, nascetur, lorem, quod commodo aspernatur placeat. </h2> 
 
-</clr-dropdown>
--->
-
-
-    <h2>My Position</h2>
-    <ul class="positions">
-      <li *ngFor="let position of positions"
-        [class.selected]="position === selectedPosition"
-        (click)="onSelect(position)">
-        <span class="badge">{{position.id}}</span> {{position.name}}
-      </li>
-    </ul>
-  
-  <!-- following used to display select position to DOM -->
-<position-detail [position] = "selectedPosition"> </position-detail> 
+  <selection></selection>
+</div>

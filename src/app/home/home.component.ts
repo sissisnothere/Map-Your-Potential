@@ -3,50 +3,61 @@
  * This software is released under MIT license.
  * The full license information can be found in LICENSE in the root directory of this project.
  */
-import { Component, OnInit } from "@angular/core";
-import { PositionService } from '../position.service';
-//import this here, otherwise will cause " Two different types with this name exist, but they are unrelated."  error
-import { Position } from "../position-detail/position";
+
+import { Component, OnInit } from '@angular/core';
+//import { SelectionComponent } from "../selection/selection.component";
+import { Question } from "../selection/selection";
+import { QuestionService } from '../selection.service';
 
 
 @Component({
-    selector: 'home',
+	selector: 'home',
     styleUrls: ['./home.component.scss'],
     templateUrl: './home.component.html',
-    providers: [PositionService]
+    providers: [QuestionService]
+
 })
 
+export class HomeComponent implements OnInit{
 
-export class HomeComponent implements OnInit {
+	questions : Question[];	//array
+	selectedQuestion: Question;	//single
 
+	/*
+	Mostly we use ngOnInit for all the initialization/declaration and avoid stuff to work in the constructor. The constructor should only be used to initialize class members but shouldn't do actual "work".
+	So you should use constructor() to setup Dependency Injection and not much else. ngOnInit() is better place to "start" - it's where/when components' bindings are resolved.
+	*/
+	constructor(private questionService : QuestionService) {
 
-//use the mock data from PositionService
-    positions: Position[];
-    selectedPosition: Position;
-   
+	}
 
-/**** DO NOT use NEW with the PositionService *****/
-
-  // will case the error fo No provider for PositionService!
-  //need to add providers to the @Component
-    constructor(private positionService : PositionService) {
-      //constructor should ne contain complex logic, expecially a constructor that  calls a server.
-    }
-    
-
-    //need to change act on the Promise when it resolves:
-    getPositions(): void {
+	getQuestions(): void {
       //this should return an array of positions, but if it complains: " Two different types with this name exist, but they are unrelated." 
       //maybe bcause we import the position in two files, or missing import files from other location
-       this.positionService.getPositions().then(positions => this.positions=positions);
+
+      // this.questionService.getQuestions().then(questions => this.questions=questions);
+
+      /*** this display the questions by the id ***/
+       this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
+        console.log(this.selectedQuestion);  
+
+        //this.selectedQuestion = this.questions.;
     } 
 
-    //ngOnInt method will call it at the right time  
-    ngOnInit(): void {
-      this.getPositions();
-    }
+
+    //if implements OnInit, must have the following ngOnInit function
+    //may not need it since it is called right after constructor?
+	ngOnInit(): void { 
+		this.getQuestions();
+	}
+
+	onOpen(open: Boolean): void {
+		this.open = open;
+		this.getQuestions();
+	}
+
+    open: Boolean = false;
 
 
-    onSelect(position: Position): void { this.selectedPosition = position; }
+
 }
-

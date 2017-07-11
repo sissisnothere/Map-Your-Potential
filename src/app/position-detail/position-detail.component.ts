@@ -18,7 +18,7 @@ import { Position } from './position';
 // because we have a new class here /new component, need to add to app.module, otherwise error
 export class PositionDetailComponent {
 	//ini class Position 
-	//declare that hero is an input property, so data can do two way
+	//declare that hero is an input property, so data can do two way binding
 	@Input() position : Position;
 
 }
