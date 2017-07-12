@@ -5,8 +5,11 @@
  */
 import { Component, Input, OnInit } from "@angular/core";
 //if the file is in current folder/same level: need to have ./in front of the folder name
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+
 import { Question } from "./selection";
 import { QuestionService } from '../selection.service';
+
 
 @Component({
     selector: 'selection',
@@ -24,10 +27,19 @@ export class SelectionComponent implements OnInit {
 	//declare that hero is an input property, so data can do two way binding
 	@Input() question : Question; 
 
-
 	questions : Question[];	//array
 	selectedQuestion: Question;	//single
 	selections : any[];  //passing answer to the array here, and display in the modal window
+    numofQuestions : any;
+    questionCount = 0;
+
+    employeeAddressForm = new FormGroup({
+ 
+        answer: new FormGroup({
+            key: new FormControl('', Validators.required),
+            value: new FormControl('', Validators.required)
+        })
+    });
 
 
 	/*
@@ -45,7 +57,8 @@ export class SelectionComponent implements OnInit {
       // this.questionService.getQuestions().then(questions => this.questions=questions);
 
       /*** this is the first question: id is 12 ***/
-       this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
+       this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 11);
+       this.numofQuestions = this.questionService.getNumberQuestions();
        this.selections = this.selectedQuestion.answer;
        console.log(this.selectedQuestion);  
     } 
@@ -78,11 +91,11 @@ export class SelectionComponent implements OnInit {
            // answer = null;
     	}
     	else if(id == 11 && answer === "B") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 12 && answer === "A") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 11);
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 12 && answer === "B") {
@@ -90,7 +103,7 @@ export class SelectionComponent implements OnInit {
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 13 && answer === "A") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 15);
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 14);
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 13 && answer === "B") {
@@ -98,27 +111,53 @@ export class SelectionComponent implements OnInit {
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 14 && answer === "A") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 13);  
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 15);  
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 14 && answer === "B") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 16);
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 15);
     		//this.selections = this.selectedQuestion.answer;
     	}
+        else if(id == 14 && answer === "C") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 15);
+            //this.selections = this.selectedQuestion.answer;
+        }
     	else if(id == 15 && answer === "A") {
     		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 16);
     		//this.selections = this.selectedQuestion.answer;
     	}
     	else if(id == 15 && answer === "B") {
-    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);  
+    		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 16);  
     		
     	}
-    	else if(id == 16) {
-    		//this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 1);
-            //this.reset();
-    	}
+    	else if(id == 16 && answer === "A") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 17);
+            //this.selections = this.selectedQuestion.answer;
+        }
+        else if(id == 16 && answer === "B") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 17);  
+            
+        }
+        else if(id == 16 && answer === "C") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 17);  
+            
+        }
+        else if(id == 17 && answer === "A") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 18);
+            //this.selections = this.selectedQuestion.answer;
+        }
+        else if(id == 17 && answer === "B") {
+            this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 18);  
+            
+        }
+        else if(id == 18 ) {
+            
+            
+        }
 
     	this.selections = this.selectedQuestion.answer;
+        this.questionCount += 1;
+
         console.log(this.selectedQuestion);  
         //answer = null;
     }
