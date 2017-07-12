@@ -4,6 +4,7 @@
 export class Position {
   id : number;
   name : string;
-
+  intro : string;
+  detail : string;
 }
 

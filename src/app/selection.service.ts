@@ -19,4 +19,7 @@ export class QuestionService {
 	getQuestions(){ 
 		return QUESTIONS;
 	}
+	getNumberQuestions(){ 
+		return QUESTIONS.length;
+	}
 }
