@@ -73,9 +73,26 @@ export class SelectionComponent implements OnInit {
 		this.getQuestions();
 	}
 
+
+    onSubmit(id: any, answer : string): void {
+        console.log("in question submit id is " + id + " answer is " + answer); 
+        if(id == 18 && answer === "A") {
+            //display the recommand position 
+
+        }
+        else if(id == 11 && answer === "A") {
+            //display the recommand position 
+        }
+
+        //this.open = false;
+         this.questionCount += 1;
+
+    }
+
+    reset() : void { this.selectedQuestion.answer = null;    }
+
 	onOpen(open: Boolean): void {
 		this.open = open;
-		//this.getQuestions();
 	}
 
     open: Boolean = false;
@@ -83,8 +100,7 @@ export class SelectionComponent implements OnInit {
     onNext(id: any, answer : string): void {
 
     	//write logics here:
-        //TODO: need to clear selection for each choice
-        //TODO: privent to click next if not select anything!!
+        //TODO: need to clear selection after close the modal window
     	if(id == 11 && answer === "A") {
     		this.selectedQuestion = this.questionService.getQuestions().find(x => x.id == 12);
     		//this.selections = this.selectedQuestion.answer;
@@ -151,8 +167,7 @@ export class SelectionComponent implements OnInit {
             
         }
         else if(id == 18 ) {
-            
-            
+           //do nothing. this will submit the answer
         }
 
     	this.selections = this.selectedQuestion.answer;
@@ -161,13 +176,6 @@ export class SelectionComponent implements OnInit {
         console.log(this.selectedQuestion);  
         //answer = null;
     }
-
-    onSubmit(id: any, answer : string): void {
-
-    }
-
-    reset() : void {
-        this.selectedQuestion.answer = null;    }
 }
 
 

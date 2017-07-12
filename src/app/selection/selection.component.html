@@ -22,8 +22,9 @@
     <div class="modal-footer">
      
         
-          <div class="progress progress-fade">
+          <div class="progress flash progress-fade labeled">
             <progress value="{{questionCount}}" max="{{numofQuestions}}" data-displayval="0%" ></progress>
+            <!-- ERROR: does not show label, flash, and fade -->
           </div>
        
       <!-- <div>Selected Radio: {{selectedQuestion.answer}}</div> -->
@@ -33,10 +34,8 @@
             	<button type="button" class="btn btn-primary" (click)="onNext(selectedQuestion.id, selectedQuestion.answer);" [disabled]="selectedQuestion.answer!= 'A' && selectedQuestion.answer!= 'B' && selectedQuestion.answer!= 'C'">Next</button>
           </div>
           <div *ngIf="selectedQuestion.id == '18'">
-            	<button type="button" class="btn btn-primary" (click)="submit();" [disabled]="selectedQuestion.answer!= 'A' && selectedQuestion.answer!= 'B' && selectedQuestion.answer!= 'C'" >Submit</button>
-          </div>
-        
-     
+            	<button type="button" class="btn btn-primary" (click)="onSubmit(selectedQuestion.id, selectedQuestion.answer); showResult= false" [disabled]="selectedQuestion.answer!= 'A' && selectedQuestion.answer!= 'B' && selectedQuestion.answer!= 'C'" >Submit</button>
+          </div> 
     </div>
    
   </clr-modal>
