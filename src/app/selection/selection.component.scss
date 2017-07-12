@@ -16,6 +16,14 @@
 	font-size: 1.5em;
 }
 
+.center-cntainer {
+    margin: 10px auto 10px auto; //margin auto is middle?
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
+
+
 @media screen and (min-width: 480px) {
     .assessment-btn {
 	    font-size: 16px;

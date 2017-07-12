@@ -3,32 +3,22 @@
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
-  
-<h2>All Position</h2>
+
 <div class="row">
-      <div *ngFor="let position of positions" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <div *ngFor="let position of positions" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
           <a href="position-detail" class="card clickable">
+              <div class="card-header">
+                {{position.name}}
+              </div>
               <div class="card-img">
                   <img src="../images/imagePlaceHolder.gif">
               </div>
               <div class="card-block">
                   <p class="card-text">
-                      {{position.name}}
+                      {{position.intro}}
                   </p>
               </div>
           </a>
       </div>
     
 </div>
-
-<!--
-<ul class="positions">
-  <li *ngFor="let position of positions"
-    [class.selected]="position === selectedPosition"
-    (click)="onSelect(position)">
-    <span class="badge">{{position.id}}</span> {{position.name}}
-  </li>
-</ul>
-  
-<position-detail [position] = "selectedPosition"> </position-detail> 
--->

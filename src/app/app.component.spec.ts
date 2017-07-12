@@ -22,7 +22,7 @@ describe('AppComponent', () => {
                 AppComponent,
                 AboutComponent,
                 HomeComponent,
-                PositionDetailComponent，
+                PositionDetailComponent,
                 SelectionComponent
             ],
             imports: [
