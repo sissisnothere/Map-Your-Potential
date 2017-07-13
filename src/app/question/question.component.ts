@@ -7,14 +7,14 @@ import { Component, Input, OnInit } from "@angular/core";
 //if the file is in current folder/same level: need to have ./in front of the folder name
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 
-import { Question } from "./selection";
-import { QuestionService } from '../selection.service';
+import { Question } from "./question";
+import { QuestionService } from '../question.service';
 
 
 @Component({
-    selector: 'selection',
-    styleUrls: ['./selection.component.scss'],
-    templateUrl: './selection.component.html',
+    selector: 'question',
+    styleUrls: ['./question.component.scss'],
+    templateUrl: './question.component.html',
     providers: [QuestionService]
 })
 
@@ -22,7 +22,7 @@ import { QuestionService } from '../selection.service';
 
 //1. this is the new class of job Position, has property id and name
 // because we have a new class here /new component, need to add to app.module, otherwise error
-export class SelectionComponent implements OnInit {
+export class QuestionComponent implements OnInit {
 
 	//declare that hero is an input property, so data can do two way binding
 	@Input() question : Question; 

@@ -1,4 +1,4 @@
-import { Question } from "./selection/selection";
+import { Question } from "./question/question";
 
 
 //can be exported so it can be imported elsewhiere, such as PositionService

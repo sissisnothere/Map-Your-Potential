@@ -5,12 +5,12 @@
  */
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import { ClarityModule } from 'clarity-angular';
-import { SelectionComponent } from './selection.component';
+import { QuestionComponent } from './question.component';
 
 
-describe('SelectionComponent', () => {
+describe('QuestionComponent', () => {
 
-    let expectedMsg: string = 'This is the selections for Mark Your Potention Application';
+    let expectedMsg: string = 'This is the questions for Map Your Potention Application';
 
     let fixture: ComponentFixture<any>;
     let compiled: any;
@@ -18,14 +18,14 @@ describe('SelectionComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [
-                SelectionComponent
+                QuestionComponent
             ],
             imports: [
                 ClarityModule.forRoot()
             ]
         });
 
-        fixture = TestBed.createComponent(SelectionComponent);
+        fixture = TestBed.createComponent(QuestionComponent);
         fixture.detectChanges();
         compiled = fixture.nativeElement;
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Question } from "./selection/selection";
+import { Question } from "./question/question";
 import { QUESTIONS } from  "./mock-questions";
 
 //tells TypeScript to emit metadata about the service.
